@@ -12,6 +12,25 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+function calculateTotalMortgage(percent, contribution, amount, date) {
+  percent = parseFloat(percent);
+  contribution = parseInt(contribution);
+  amount = parseInt(amount);
+
   
+  //todo added ValidityState
+
+  let endDate = new Date(date);
+  let nowDate = new Date(Date.now);
+
+  //todo fix NaN
+
+  let countMonths = date;
+
+  let percentPerMonth = percent / (12 * 100);
+  
+  let amountPerMonth = (amount - contribution) + (percentPerMonth + (percentPerMonth / ((Math.pow(1 + percentPerMonth)^countMonths) - 1)));
+  let totalAmount = (amountPerMonth * countMonths).toFixed(2);
+  console.log(totalAmount);
+  return +totalAmount;
 }
