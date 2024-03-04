@@ -31,7 +31,7 @@ function Student(name, gender, age) {
         this.excluded = reason;
         
     };
-};
+}
 
 let student1 = new Student("Василиса", "женский", 19);
 student1.setSubject("Algebra");
