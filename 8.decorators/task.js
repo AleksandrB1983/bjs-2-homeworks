@@ -14,12 +14,10 @@ function cachingDecoratorNew(func) {
     }
 
     const result = func(...args);
-    cache.push(        
-      {
+    cache.push({
         hash,
         value: result
-      }
-    );
+    });
 
     if (cache.length > 5) {
       cache.shift();
@@ -52,5 +50,5 @@ function debounceDecoratorNew(func, delay) {
   wrapper.allCount = 0;
   wrapper.count = 0;
 
-  return wrapper;  
+  return wrapper;
 }
