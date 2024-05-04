@@ -16,7 +16,11 @@ class AlarmClock {
       console.warn("Уже присутствует звонок на это же время");
     }
 
-    this.alarmCollection.push({time, callback, canCall: true});
+    this.alarmCollection.push({
+        time, 
+        callback, 
+        canCall: true
+      });
   }
 
   removeClock(time) {
